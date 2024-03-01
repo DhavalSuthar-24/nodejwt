@@ -2,31 +2,31 @@
 <div class="flex justify-center items-center min-h-screen bg-gray-100">
   <div class="w-full max-w-md px-6 py-8 bg-white rounded-lg shadow-lg">
     <h2 class="text-2xl font-bold text-center mb-8">Sign Up</h2>
-    <form class="space-y-4" [formGroup]="signupForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+    <form class="space-y-4" [formGroup]="signupForm"  (ngSubmit)="onSubmit()" >
       <div>
         <label for="firstName" class="block mb-1">First Name</label>
-        <input type="text" id="firstName" class="form-input border border-gray-300 w-full p-2" placeholder="Enter your first name" formControlName="firstName">
+        <input type="text" id="firstName" class="form-input border border-gray-300 w-full p-2" placeholder="Enter your first name" formControlName="firstName" name="firstName">
       </div>
       <div>
         <label for="lastName" class="block mb-1">Last Name</label>
-        <input type="text" id="lastName" class="form-input border border-gray-300 w-full p-2" placeholder="Enter your last name" formControlName="lastName">
+        <input type="text" id="lastName" class="form-input border border-gray-300 w-full p-2" placeholder="Enter your last name" formControlName="lastName" name="lastName">
       </div>
       <div>
         <label for="username" class="block mb-1">Username</label>
-        <input type="text" id="username" class="form-input border border-gray-300 w-full p-2" placeholder="Enter your username" formControlName="username">
+        <input type="text" id="username" class="form-input border border-gray-300 w-full p-2" placeholder="Enter your username" formControlName="username" name="username">
       </div>
       <div>
         <label for="email" class="block mb-1">Email</label>
-        <input type="email" id="email" class="form-input border border-gray-300 w-full p-2" placeholder="Enter your email address" formControlName="email">
+        <input type="email" id="email" class="form-input border border-gray-300 w-full p-2" placeholder="Enter your email address" formControlName="email" name="email">
       </div>
       <div>
         <label for="password" class="block mb-1">Password</label>
-        <input type="password" id="password" class="form-input border border-gray-300 w-full p-2" placeholder="Enter your password" formControlName="password">
+        <input type="password" id="password" class="form-input border border-gray-300 w-full p-2" placeholder="Enter your password" formControlName="password" name="password">
       </div>
-      <div>
+      <!-- <div>
         <label for="profilePic" class="block mb-1">Profile Picture</label>
         <input type="file" id="profilePic" class="form-input p-2" accept="image/*" formControlName="profilePic">
-      </div>
+      </div> -->
       <button type="submit" class="w-full py-2 bg-blue-500 text-white rounded-lg">Sign Up</button>
     </form>
   </div>
