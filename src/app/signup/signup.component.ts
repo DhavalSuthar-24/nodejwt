@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SignupService } from '../service/signup.service';
+import { ToastrService } from 'ngx-toastr';
 interface SignupData {
   firstName: string;
   lastName: string;
@@ -21,8 +22,8 @@ interface SignupData {
 export class SignupComponent implements OnInit {
   signupForm!: FormGroup;
   isLoading = false; // Boolean flag to indicate loading state
-
-  constructor(private fb: FormBuilder, private signupService: SignupService) { }
+  showToast = false;
+  constructor(private fb: FormBuilder, private signupService: SignupService, private ts:ToastrService) { }
 
   ngOnInit(): void {
     this.signupForm = this.fb.group({
@@ -71,9 +72,14 @@ export class SignupComponent implements OnInit {
       (response) => {
         this.isLoading = false; // Reset loading state
         console.log('User signed up successfully:', response);
-        // Handle successful signup response (e.g., navigate to another page, show confirmation message)
+        this.showToast = true;
+        this.ts.success('User created successfully', 'Success');
+     
+        setTimeout(() => {
+          this.showToast = false;
+        }, 2000);
       },
-      (error) => {
+      (error: any) => {
         this.isLoading = false; // Reset loading state
         console.error('Error occurred while signing up:', error);
         // Handle error and display user-friendly message if needed

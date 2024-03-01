@@ -8,11 +8,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 import { SignupService } from './service/signup.service';
-
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
-    SignupComponent
+    SignupComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -21,6 +24,8 @@ import { SignupService } from './service/signup.service';
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([]) ,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
     
   ],
   providers: [provideHttpClient(),SignupService],
