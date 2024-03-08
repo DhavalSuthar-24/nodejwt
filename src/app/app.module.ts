@@ -11,11 +11,13 @@ import { SignupService } from './service/signup.service';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
+import { DashComponent } from './dash/dash.component';
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    DashComponent
   ],
   imports: [
     BrowserModule,
